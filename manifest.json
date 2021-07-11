@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "EasyPrint",
+    "version": "1.0",
+    "description": "Exemplo de descrição da extensão.",
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "icon19.png",
+            "38": "icon38.png"
+        },
+        "default_title": "EasyPrint",
+        "default_popup": "src/pages/index.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "src/components/button.js",
+                "src/inject/printpage.js"
+            ],
+            "matches": [
+                "*://*/*",
+                "<all_urls>"
+            ]
+        }
+    ]
+}
